@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="FYXin">
 <meta property="og:description" content="iOS 快速自定义大量表单近期公司的项目有很多信息采集的界面，类似于注册QQ时需要填写大量的注册信息，就花时间研究了一下怎样才能快速的完成功能。
 显然一个一个条目的写是行不通的，因为界面信息实在太多，而且根本不便于扩展，最先想到的就是使用UITableView 这个组件进行代码的编写">
-<meta property="og:image" content="http://yoursite.com/Users/FYXin/Desktop/custome_1.gif">
-<meta property="og:updated_time" content="2017-09-06T07:32:33.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/FYXin/FImageRepositoy/master/custome_1.gif">
+<meta property="og:updated_time" content="2017-09-06T07:46:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FYXin">
 <meta name="twitter:description" content="iOS 快速自定义大量表单近期公司的项目有很多信息采集的界面，类似于注册QQ时需要填写大量的注册信息，就花时间研究了一下怎样才能快速的完成功能。
 显然一个一个条目的写是行不通的，因为界面信息实在太多，而且根本不便于扩展，最先想到的就是使用UITableView 这个组件进行代码的编写">
-<meta name="twitter:image" content="http://yoursite.com/Users/FYXin/Desktop/custome_1.gif">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/FYXin/FImageRepositoy/master/custome_1.gif">
   
     <link rel="alternative" href="/atom.xml" title="FYXin" type="application/atom+xml">
   
@@ -199,7 +199,7 @@
 <p>##自定义表格</p>
 <p>到这里大部分的基础工作都基本完成了，当我们需要创建一个表格的时候，只需要继承<code>ZZFormViewController</code>,重写<code>- (void)createDateSource;</code>这个数据源方法即可</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">LogAddViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">// Do any additional setup after loading the view.</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)createDateSource &#123;</div><div class="line">    </div><div class="line">    <span class="keyword">self</span>.formDataSource = [[ZZFormDataSource alloc] init];</div><div class="line">    ZZFormItem *item = [ZZFormItem itemWithKey:<span class="string">@"name"</span> title:<span class="string">@"撰写人"</span> content:<span class="string">@"FYXin"</span> style:ZZFormCellStyleInput];</div><div class="line">    ZZFormItem *item2 = [ZZFormItem itemWithKey:<span class="string">@"title"</span> title:<span class="string">@"撰写日期"</span> content:<span class="literal">nil</span> style:ZZFormCellStyleListSelectView command:[[ZZShowSelectTypeCommand alloc] initWithType:ZZPickerStyleDate title:<span class="string">@"请选择日期"</span>]];</div><div class="line">    ZZFormItem *item3 = [ZZFormItem itemWithKey:<span class="string">@"time"</span> title:<span class="string">@"日志类型"</span> content:<span class="string">@"09:10"</span> style:ZZFormCellStyleListSelectView command:[[ZZShowSelectTypeCommand alloc] initWithType:ZZPickerStyleLogType title:<span class="string">@"请选择日志类型"</span>]];</div><div class="line">    ZZFormItem *item4 = [ZZFormItem itemWithKey:<span class="string">@"date"</span> title:<span class="string">@"日志内容"</span> content:<span class="string">@"2018-08-28"</span> style:ZZFormCellStyleInputTextView];</div><div class="line">    ZZFormItem *item5 = [ZZFormItem itemWithKey:<span class="string">@"mark"</span> title:<span class="string">@"添加附件"</span> content:<span class="literal">nil</span> style:ZZFormCellStyleImage command:[ZZChoosePhotoCommand new]];</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span>.formDataSource append:item];</div><div class="line">    [<span class="keyword">self</span>.formDataSource append:item2];</div><div class="line">    [<span class="keyword">self</span>.formDataSource append:item3];</div><div class="line">    [<span class="keyword">self</span>.formDataSource append:item4];</div><div class="line">    [<span class="keyword">self</span>.formDataSource append:item5];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/Users/FYXin/Desktop/custome_1.gif" alt="简单实现"> </p>
+<p><img src="https://raw.githubusercontent.com/FYXin/FImageRepositoy/master/custome_1.gif" alt="简单实现"> </p>
 
       
 
